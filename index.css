@@ -1,0 +1,25 @@
+body {
+    background-color: bisque;
+    height: 100vh; /* Ensures the background fills the viewport */
+    margin: 0; /* Removes default margins */
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.super-dutch-mode {
+    background: linear-gradient(
+        to bottom, 
+        rgb(204, 13, 13) 33.33%, 
+        rgb(226, 226, 226) 33.33%, 
+        rgb(226, 226, 226) 66.66%, 
+        rgb(12, 12, 207) 66.66%
+    );
+    background-size: 150px 100%; /* Adjust the size to control the stripe width */
+}
+
+main {
+    margin: 1em 1em;
+}
+
+.question {
+    
+}
