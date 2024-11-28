@@ -85,10 +85,24 @@ document.getElementById('submitQuiz').addEventListener('click', () => {
         }
     });
 
+    const correctAnswersList = document.getElementById('correctAnswersList');
+    correctAnswersList.innerHTML = "";
+    correctAnswersList.style.backgroundColor = "#0000CC";
     answers.forEach((answer, index) => {
+        const listItem = document.createElement('li');
+        const correctAnswer = quizData.words[index][2];
+        const word = quizData.words[index][0];
+        const translation = quizData.words[index][1];
+        listItem.textContent = `"${word}" (${translation}) is "${correctAnswer}"`;
+
         if (answer == quizData.words[index][2]) {
             correctAnswers += 1;
+            listItem.style.color = "green";
+        } else {
+            listItem.style.color = "red";
         }
+
+        correctAnswersList.appendChild(listItem);
     });
 
     const main = document.getElementById('main');
