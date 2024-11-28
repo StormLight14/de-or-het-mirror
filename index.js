@@ -67,7 +67,7 @@ document.getElementById('submitQuiz').addEventListener('click', () => {
     });
 
     const main = document.getElementById('main');
-    const scoreText = document.createElement('p');
-    scoreText.textContent = "Score: " + correctAnswers.toString() + "/" + quizData["words"].length.toString();
+    const score = document.getElementById('score');
+    score.textContent = "Score: " + correctAnswers.toString() + "/" + quizData["words"].length.toString();
     main.appendChild(scoreText);
 });
