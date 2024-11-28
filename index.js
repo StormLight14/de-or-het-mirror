@@ -19,17 +19,31 @@ const quizData = {
 const quizContainer = document.getElementById('quizContainer');
 
 function makeQuiz(data) {
+    const allChoices = ["de", "het"];
     data.words.forEach((wordSet, index) => {
         const questionDiv = document.createElement('div');
         questionDiv.className = "question";
-    });
-    
-    const questionText = document.createElement('h3');
-    questionText.textContent = `Is "${wordSet[0]}" a "de" or "het" word?`;
-    questionDiv.appendChild(questionText);
 
-    const main = document.getElementById('main');
-    main.appendChild(questionDiv);
+        const questionText = document.createElement('h3');
+        questionText.textContent = `What is the article for "${wordSet[0]}"?`;
+        questionDiv.appendChild(questionText);
+
+        allChoices.forEach((choice) => {
+            const label = document.createElement('label');
+            const input = document.createElement('input');
+
+            input.type = "radio";
+            input.name = `question${index}`;
+            input.value = choice;
+
+            label.appendChild(input);
+            label.appendChild(document.createTextNode(choice));
+            questionDiv.appendChild(label);
+            questionDiv.appendChild(document.createElement('br'));
+        });
+
+        quizContainer.appendChild(questionDiv);
+    });
 }
 
 makeQuiz(quizData);
