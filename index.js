@@ -36,9 +36,9 @@ const quizContainer = document.getElementById('quizContainer');
 
 function makeQuiz(data) {
     // shuffle, thanks Laurens Holst & Luca C. on stack overflow :3
-    for (let i = quizData["words"].length - 1; i >= 0; i--) {
+    for (let i = quizData.words.length - 1; i >= 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
-        [quizData["words"][i], quizData["words"][j]] = [quizData["words"][j], quizData["words"][i]];
+        [quizData.words[i], quizData.words[j]] = [quizData.words[j], quizData.words[i]];
     }
 
     const allChoices = ["de", "het"];
@@ -93,6 +93,6 @@ document.getElementById('submitQuiz').addEventListener('click', () => {
 
     const main = document.getElementById('main');
     const score = document.getElementById('score');
-    score.textContent = "Score: " + correctAnswers.toString() + "/" + quizData["words"].length.toString();
+    score.textContent = "Score: " + correctAnswers.toString() + "/" + quizData.questionCount.toString();
     main.appendChild(scoreText);
 });
