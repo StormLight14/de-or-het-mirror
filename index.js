@@ -47,3 +47,27 @@ function makeQuiz(data) {
 }
 
 makeQuiz(quizData);
+
+document.getElementById('submitQuiz').addEventListener('click', () => {
+    let correctAnswers = 0;
+    let answers = [];
+    const questions = document.querySelectorAll('.question');
+
+    questions.forEach((question, _index) => {
+        const selectedOption = question.querySelector('input[type="radio"]:checked');
+        if (selectedOption) {
+            answers.push(selectedOption.value);
+        }
+    });
+
+    answers.forEach((answer, index) => {
+        if (answer == quizData.words[index][2]) {
+            correctAnswers += 1;
+        }
+    });
+
+    const main = document.getElementById('main');
+    const scoreText = document.createElement('p');
+    scoreText.textContent = "Score: " + correctAnswers.toString() + "/" + quizData["words"].length.toString();
+    main.appendChild(scoreText);
+});

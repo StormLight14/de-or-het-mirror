@@ -4,8 +4,9 @@
 
 body {
     background-color: bisque;
-    height: 100vh; /* Ensures the background fills the viewport */
-    margin: 0; /* Removes default margins */
+    height: 100vh;
+    margin: 0;
+    font-size: 1.1em;
     font-family: Helvetica, Arial, sans-serif;
 }
 
@@ -17,11 +18,19 @@ body {
         rgb(226, 226, 226) 66.66%, 
         rgb(12, 12, 207) 66.66%
     );
-    background-size: 150px 100%; /* Adjust the size to control the stripe width */
+    background-size: 150px 100%;
 }
 
 main {
     margin: 1em 1em;
+}
+
+h2 {
+    margin-top: 0.5em;
+}
+
+button {
+    margin-bottom: 0.5em;
 }
 
 .question {
@@ -30,4 +39,3 @@ main {
     padding: 0.5em 0.5em;
 }
 
-.
